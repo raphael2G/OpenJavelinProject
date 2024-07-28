@@ -56,3 +56,12 @@ exports.deleteUserDataByID = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+exports.getSubmissionsByUID = async (req, res) => {
+  try {
+      const submissions = await UserData.find({"accountInformation.uid": req.params.uid});
+      res.json(submissions)
+  } catch (error) {
+      res.status(500).json({ error: error.message });
+  }
+};
