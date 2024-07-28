@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Form.css'; 
 import axios from 'axios'; // used for making HTTP requests to backend
 
@@ -125,86 +126,93 @@ const sections = {
   }
 }
 
-// there's probably a better way to do this
-const initialFormData = {
-  personalInformation: {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    personalBest: 0
-  },
-  goals: {
-    overallGoals: '',
-    targetDistance: 0,
-    timeFrame: 0
-  },
-  injuryHistory: {
-    turnUCL: '',
-    other: ''
-  },
-  bodyInformation: {
-    age: 0,
-    height: 0, 
-    weight: 0, 
-    bodyFatPercentage: 0,
-    leanBodyMass: 0
-  },
-  strength: {
-    benchPress: 0,
-    squat: 0,
-    frontSquat: 0,
-    deadlift: 0
-  },
-  olympicLifts: {
-    snatch: 0,
-    clean: 0,
-    jerk: 0,
-    powerClean: 0,
-    powerSnatch: 0,
-    cleanAndJerk: 0
-  },
-  jumps: {
-    verticalJump: 0,
-    broadJump: 0,
-    standingLongJump: 0,
-    standing3Jumps: 0,
-    standing5Jumps: 0
-  },
-  weightedBallThrows: {
-    overheadBackward54: 0,
-    overheadBackward4: 0, 
-    underhand54: 0,
-    underhand4: 0,
-    overheadForeward4: 0,
-    overheadForeward25: 0,
-    overheadForeward2: 0
-  },
-  speed: {
-    flying20m: 0,
-    standing30m: 0,
-    dash30m: 0
-  },
-  throws: {
-    standingThrow800g: 0,
-    standingThrow600g: 0,
-    standingThrow1kgBall: 0,
-    standingThrow2kgBall: 0,
-    threeStep800g: 0,
-    threeStep600g: 0
-  },
-  mobility: {
-    passThroughMobility: 0,
-    rightSplit: 0,
-    leftSplit: 0,
-    middleSplit: 0
+
+
+const requirements = new Set();
+
+
+const Form = ({uid}) => {
+  if (!uid) {
+    throw new Error('No UID provided to Form component');
   }
-};
-
-const requirements = new Set(["firstName", "lastName", "email", "personalBest"]);
-
-
-const Form = () => {
+  // there's probably a better way to do this
+  const initialFormData = {
+    accountInformation: {
+      uid: uid
+    },
+    personalInformation: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      personalBest: 0
+    },
+    goals: {
+      overallGoals: '',
+      targetDistance: 0,
+      timeFrame: 0
+    },
+    injuryHistory: {
+      turnUCL: '',
+      other: ''
+    },
+    bodyInformation: {
+      age: 0,
+      height: 0, 
+      weight: 0, 
+      bodyFatPercentage: 0,
+      leanBodyMass: 0
+    },
+    strength: {
+      benchPress: 0,
+      squat: 0,
+      frontSquat: 0,
+      deadlift: 0
+    },
+    olympicLifts: {
+      snatch: 0,
+      clean: 0,
+      jerk: 0,
+      powerClean: 0,
+      powerSnatch: 0,
+      cleanAndJerk: 0
+    },
+    jumps: {
+      verticalJump: 0,
+      broadJump: 0,
+      standingLongJump: 0,
+      standing3Jumps: 0,
+      standing5Jumps: 0
+    },
+    weightedBallThrows: {
+      overheadBackward54: 0,
+      overheadBackward4: 0, 
+      underhand54: 0,
+      underhand4: 0,
+      overheadForeward4: 0,
+      overheadForeward25: 0,
+      overheadForeward2: 0
+    },
+    speed: {
+      flying20m: 0,
+      standing30m: 0,
+      dash30m: 0
+    },
+    throws: {
+      standingThrow800g: 0,
+      standingThrow600g: 0,
+      standingThrow1kgBall: 0,
+      standingThrow2kgBall: 0,
+      threeStep800g: 0,
+      threeStep600g: 0
+    },
+    mobility: {
+      passThroughMobility: 0,
+      rightSplit: 0,
+      leftSplit: 0,
+      middleSplit: 0
+    }
+  };
   // really should be using ref here instead of state... who put this here?!?
   const [formData, setFormData] = useState(initialFormData);
 
@@ -219,6 +227,8 @@ const Form = () => {
     }));
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -231,16 +241,18 @@ const Form = () => {
 
 
     try {
-      const response = await axios.post('http://localhost:5002/api/userData',formData, {
+      const response = await axios.post(process.env.REACT_APP_MONGODB_FORM_SUBMISSION,formData, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
       console.log("Server Response: ", response.data);
 
-      alert('Data submitted successfully!');
       
       setFormData(initialFormData); // Make sure to clear the form after submission!
+
+      // navigate to the form submission page
+      navigate('/formSubmission');
 
     } catch (error) {
       console.error('Error posting data:', error.response ? error.response.data : error);

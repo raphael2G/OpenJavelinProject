@@ -16,7 +16,7 @@ const Login = () => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/form")
+            navigate("/profile")
             console.log("Successfully logged in user");
             console.log("User:", user);
         })

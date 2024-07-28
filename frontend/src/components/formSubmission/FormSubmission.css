@@ -1,0 +1,64 @@
+/* FormSubmission.css */
+.submission-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-section {
+    position: relative;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-section .confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url('confetti.gif') center center / cover no-repeat; */
+}
+
+.content-section, .share-feedback-section, .navigation-section {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2, .share-feedback-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.content-section p, .share-feedback-section p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.share-feedback-section button, .navigation-section button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1em;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-feedback-section button:hover, .navigation-section button:hover {
+    background: #0056b3;
+}
