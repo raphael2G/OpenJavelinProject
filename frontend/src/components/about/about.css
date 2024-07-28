@@ -1,0 +1,25 @@
+#mainContainer {
+    background-color: rgb(190, 190, 190);
+    margin: 0 10%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.section {
+    background-color: beige;
+    margin: 10px; 
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
