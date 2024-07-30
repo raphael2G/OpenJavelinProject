@@ -48,9 +48,17 @@ export default function LoginForm() {
         })
     })
     .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
+        if (error.code === "auth/invalid-credential") {
+          toast({
+            title: "Something went wrong trying to log you in ",
+            description: "This email/password combination is incorrect"
+          })
+        } else {
+          toast({
+            title: "Something went wrong trying to log you in",
+            description: "Please try again"
+          })
+        }
     });
   }
 

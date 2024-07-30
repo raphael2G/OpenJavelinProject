@@ -36,7 +36,7 @@ export default function SignupForm() {
       .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/login")
+          navigate("/form")
           console.log("Successfully created user");
           console.log("User:", user);
           toast({
@@ -45,10 +45,18 @@ export default function SignupForm() {
           })
       })
       .catch((error) => {
-          alert("Failed to create account. Please try again.");
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+        console.log(error.code)
+          if (error.code === "auth/email-already-in-use") {
+            toast({
+              title: "Email already in use",
+              description: "Login or signup with new email"
+            })
+          } else {
+            toast({
+              title: "Uh oh. Something went wrong",
+              description: "Failed to create account. Please try again"
+            })
+          }
       });
   }
 
