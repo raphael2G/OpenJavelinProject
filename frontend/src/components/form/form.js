@@ -126,11 +126,10 @@ const sections = {
   }
 }
 
-
-
 const requirements = new Set();
 
 
+// give uid to the form so it can then be sent (on submission) to the mongo database.
 const Form = ({uid}) => {
   if (!uid) {
     throw new Error('No UID provided to Form component');
