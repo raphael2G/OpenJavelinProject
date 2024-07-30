@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { createUserData, getAllUserData, getUserDataByID, updateUserDataByID, deleteUserDataByID, getSubmissionsByUID } = require('../controllers/userDataControllers');
 
-
-
 // POST, create new user data
 router.post('/', createUserData);
 
