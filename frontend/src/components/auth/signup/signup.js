@@ -3,6 +3,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../../../firebase/firebase';
 
+import SignupForm from './signupForm';
+
 import './signup.css';
 
  
@@ -33,59 +35,8 @@ const Signup = () => {
  
     return (
         <main id="signup-main">        
-            <section id="signup-section">
-                <div id="signup-container">
-                    <div id="signup-form-container">                                                                                     
-                        <form id="signup-form">                                                                                            
-                            <div className="signup-input-container">
-                                <label htmlFor="email-address">
-                                    Email address
-                                </label>
-                                <input
-                                    id="signup-email-address"
-                                    type="email"
-                                    label="Email address"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}  
-                                    required                                    
-                                    placeholder="Email address"                                
-                                />
-                            </div>
-    
-                            <div className="signup-input-container">
-                                <label htmlFor="password">
-                                    Password
-                                </label>
-                                <input
-                                    id="signup-password"
-                                    type="password"
-                                    label="Create password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)} 
-                                    required                                 
-                                    placeholder="Password"              
-                                />
-                            </div>                                             
-                            
-                            <div id="signup-button-container">
-                                <button
-                                    type="submit" 
-                                    onClick={onSubmit}                        
-                                >  
-                                    Sign up                                
-                                </button>
-                            </div>
-                                                                         
-                        </form>
-                       
-                        <p id="signup-login-text" className="text-sm text-white text-center">
-                            Already have an account?{' '}
-                            <NavLink to="/login">
-                                Log in
-                            </NavLink>
-                        </p>                   
-                    </div>
-                </div>
+            <section id="signup-section">                
+                <SignupForm/>
             </section>
         </main>
       )
