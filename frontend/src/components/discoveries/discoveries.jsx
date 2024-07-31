@@ -1,5 +1,3 @@
-import verticalDartBoard from "@/assets/images/verticalDarts.jpg"
-import { Link } from 'react-router-dom';
 
 
 const stats = [
