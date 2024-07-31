@@ -20,7 +20,7 @@ export default function Header ({isLoggedin, auth}) {
 
     return (
         <>
-            <header className="bg-white shadow-sm fixed z-20 w-full">
+            <header className="bg-white shadow-sm fixed h-16 t-0 z-50 w-full">
             <div className="container mx-auto flex justify-between items-center p-4">
                 <Link to="/"><div className="text-xl font-bold"> Open Javelin Project</div></Link>
                 <ul className="flex space-x-6">

@@ -7,6 +7,7 @@ import Profile from '@/components/profile/profile';
 import Login from '@/components/auth/login/login';
 import Signup from '@/components/auth/signup/signup';
 import FormSubmission from '@/components/formSubmission/formSubmission';
+import PageNotFound from '@/components/pageNotFound/pageNotFound';
 import { Toaster } from "@/components/ui/toaster"
 
 
@@ -50,12 +51,14 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
+              <Route path="*" element={<PageNotFound/>}/>
               
               <Route element={<PrivateRoutes/>}>
                 <Route path="/formSubmission" element={<FormSubmission/>}/>
                 <Route path='/form' element={<Form uid={auth?.currentUser?.uid}/>} />
                 <Route path='/profile' element={<Profile uid={auth?.currentUser?.uid}/>} />
               </Route>
+              
             </Routes>                    
         </section>
         <Toaster />
