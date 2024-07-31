@@ -16,6 +16,7 @@
     "clsx": "^2.1.1",
     "firebase": "^10.12.0",
     "firebaseui": "^6.1.0",
+    "framer-motion": "^11.3.19",
     "lucide-react": "^0.417.0",
     "mongodb": "^6.6.1",
     "react": "^18.3.1",
