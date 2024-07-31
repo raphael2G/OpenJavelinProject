@@ -3,7 +3,6 @@ import './App.css';
 
 import Header from '@/components/header/header'
 import Home from '@/components/home/home';
-import About from '@/components/about/about';
 import Profile from '@/components/profile/profile';
 import Login from '@/components/auth/login/login';
 import Signup from '@/components/auth/signup/signup';
