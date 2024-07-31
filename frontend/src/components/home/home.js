@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { BackgroundBeams } from '../ui/background-beams';
+
 export default function Home() {
     useEffect(() => {
         AOS.init({ duration: 1000, once: true});
@@ -13,17 +15,41 @@ export default function Home() {
 
     return (
         <div className="bg-gray-100 min-h-screen">
-            <div className="container mx-auto p-8 w-3/5">
-                <div class="hero bg-cover bg-center h-screen flex items-center justify-center">
-                    <div class="text-center text-black">
-                        <h1 class="text-5xl font-bold mb-4">Open Javelin Project</h1>
-                        <p class="text-xl mb-8">Unlocking the Secrets to Elite Javelin Performance</p>
-                        <div class="flex justify-center space-x-4">
-                            <Link to="/signup" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Join the Study</Link>
-                            <a href="/#about" className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Learn More</a>
-                        </div>
+
+            <div className="h-[65rem] w-full rounded-md bg-neutral-100 relative flex flex-col items-center justify-center antialiased">
+                <div className="max-w-2xl mx-auto p-4">
+                    <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-t from-neutral-900 to-neutral-950  text-center font-sans font-bold">
+                    Open Javelin Project
+                    </h1>
+                    <p></p>
+                    <p className="text-neutral-500 max-w-lg mx-auto my-2 text-xl text-center relative z-10">
+                    Unlocking the Secrets to Elite Javelin Performance
+
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <Link to="/signup" className="z-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Join the Study</Link>
+                        <a href="/#about" className="z-10 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Learn More</a>
                     </div>
                 </div>
+                <BackgroundBeams />
+            </div>
+
+            <div className="container mx-auto p-8 w-3/5">
+                {/* <div>
+                    <div class="hero bg-cover bg-center h-screen flex items-center justify-center">
+                        <div class="text-center text-black">
+                            <h1 class="text-5xl font-bold mb-4">Open Javelin Project</h1>
+                            <p class="text-xl mb-8">Unlocking the Secrets to Elite Javelin Performance</p>
+                            <div class="flex justify-center space-x-4">
+                                <Link to="/signup" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Join the Study</Link>
+                                <a href="/#about" className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> */}
+
+
+
 
                 <section id="about" className="bg-white shadow-lg rounded-lg p-6">
                     <div className="text-center">
