@@ -51,12 +51,12 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
+              <Route path='/profile' element={<Profile uid={auth?.currentUser?.uid}/>} />
               <Route path="*" element={<PageNotFound/>}/>
               
               <Route element={<PrivateRoutes/>}>
                 <Route path="/formSubmission" element={<FormSubmission/>}/>
                 <Route path='/form' element={<Form uid={auth?.currentUser?.uid}/>} />
-                <Route path='/profile' element={<Profile uid={auth?.currentUser?.uid}/>} />
               </Route>
               
             </Routes>                    
