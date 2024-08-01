@@ -15,7 +15,7 @@ import Discovery from '@/components/discoveries/discovery';
 
 export default function Home() {
     useEffect(() => {
-        AOS.init({ duration: 1000, once: true});
+        AOS.init({ duration: 3000, once: false});
 
     }, []);
 
@@ -48,20 +48,23 @@ export default function Home() {
             <div className="container mx-auto p-8">
                 
 
-                <section id="about" className="bg-green shadow-lg rounded-2xl">
 
-                    <About/>
-
+                <section id="about" className="pt-[200px]">
+                    <section  className=" shadow-lg rounded-2xl">
+                        <About/>
+                    </section>
                 </section>
 
 
-                <section id="people" className="bg-white shadow-lg rounded-lg p-6 m-10">
-                    <People/>
+                <section id="people" className="pt-[200px]">
+                    <section className="bg-white shadow-lg rounded-lg p-6 m-10">
+                        <People/>
+                    </section>
                 </section>
 
-
-                <section data-aos="fade-up" id="how-it-works" class="py-12 text-center">
-                    <div class="container mx-auto mb-10">
+                <section  class="py-12 text-center">
+                    <section  id="how-it-works"  className="pt-[250px]">
+                    <div data-aos="fade-up" class="container mx-auto mb-10">
                         <h2 class="text-3xl font-bold mb-8">How It Works</h2>
                         <div class="flex flex-wrap justify-around">
                         <div class="w-full md:w-1/4 mb-6">
@@ -84,10 +87,15 @@ export default function Home() {
                         </div>
                         </div>
                     </div>
-
-                    <section id="discoveries" className="bg-white shadow-lg rounded-lg p-6 m-10">
-                        <Discovery/>
                     </section>
+
+
+                    <section id="discoveries"  className="pt-[200px]">
+                        <section id="discoveries" className="bg-white shadow-lg rounded-lg p-6 m-10">
+                            <Discovery/>
+                        </section>
+                </section>
+                    
 
                     {/* <section data-aos="fade-up" className="bg-white shadow-lg rounded-lg p-6 mb-12">
                         <div className="text-center">
@@ -100,24 +108,22 @@ export default function Home() {
                     </section> */}
                 </section>
 
+
                 
                 
 
-                <section data-aos="fade-up" className="bg-white shadow-lg rounded-lg p-6 mb-12">
+                <section data-aos="fade-up" id="join" className="bg-white shadow-lg rounded-lg p-6 mb-12">
                     <div className="max-w-2xl mx-auto p-4">
                         <h1 className="relative z-10 p-2 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-t from-neutral-900 to-neutral-950  text-center font-sans font-bold">
                         Join the <span className="text-blue-500">Project</span>
                         </h1>
-                        <p className="text-neutral-500 pb-4 max-w-lg mx-auto my-2 text-xl text-center relative z-10">
-                        It'll only take 10 minutes
-                        </p>
 
-                        <div class="flex justify-center space-x-4">
+                        <div class="flex justify-center space-x-4 pt-8">
                             <Link to="/signup" className="z-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Get started now</Link>
                         </div>
                     </div>
 
-                    <svg
+                    {/* <svg
                         viewBox="0 0 1024 1024"
                         aria-hidden="true"
                         className="absolute z-0 left-1/2 top-3 z-0 h-[16rem] w-[16rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
@@ -129,7 +135,7 @@ export default function Home() {
                             <stop offset={1} stopColor="#E935C1" />
                         </radialGradient>
                         </defs>
-                    </svg>
+                    </svg> */}
                 </section>
 
             </div>

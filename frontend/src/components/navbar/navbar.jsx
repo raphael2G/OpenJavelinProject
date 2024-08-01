@@ -20,7 +20,7 @@ const sections = [
   { id: 'how-it-works', title: 'How it Works' },
   { id: 'discoveries', title: 'Discoveries' },
   { 
-    id: 'cta', 
+    id: 'join', 
     title: (
       <>
         <span className="hidden lg:inline">Join the Project</span>
@@ -64,7 +64,7 @@ export default function NavBar() {
         .map(({ id }) => document.getElementById(id))
         .filter((el) => el !== null)
       let bodyRect = document.body.getBoundingClientRect()
-      let offset = bodyRect.top + navBarRef.current.offsetHeight + 1
+      let offset = bodyRect.top + navBarRef.current.offsetHeight + 100
 
       if (window.scrollY >= Math.floor(bodyRect.height) - window.innerHeight) {
         setActiveIndex(sections.length - 1)
