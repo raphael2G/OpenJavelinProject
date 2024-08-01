@@ -240,13 +240,20 @@ const Form = ({uid}) => {
 
 
     try {
-      const response = await axios.post(process.env.REACT_APP_MONGODB_FORM_SUBMISSION,formData, {
+      const response = await axios.post(process.env.REACT_APP_MONGODB_SEVERLESS_FORM_SUBMISSION,formData, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
       console.log("Server Response: ", response.data);
 
+      // update the local storage with the new submission
+      const oldSubmissions = JSON.parse(localStorage.getItem('submissions'));
+      try {
+        localStorage.setItem('submissions', JSON.stringify([...oldSubmissions, formData]));
+      } catch (error) {
+        localStorage.setItem('submissions', JSON.stringify([formData]));
+      }
       
       setFormData(initialFormData); // Make sure to clear the form after submission!
 
