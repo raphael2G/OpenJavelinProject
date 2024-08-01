@@ -11,7 +11,7 @@ export default function FormSubmission() {
     return (
         <div className="submission-container">
             {/* reccomended to use width and height props through hook. don't think it is a big deal */}
-            <Confetti recycle={false} numberOfPieces={10000} tweenDuration={50000}/> 
+            <Confetti/> 
 
             <div className="hero-section">
                 <h1>Thank You!</h1>
