@@ -12,6 +12,7 @@ export default function Header ({isLoggedin, auth}) {
     const onSignOut = () => {
         console.log("Signing Out: ", auth);
         auth.signOut();
+        localStorage.setItem('submissions', JSON.stringify([]));
         navigate('/');
         toast({
             title: "Successfully signed out"
