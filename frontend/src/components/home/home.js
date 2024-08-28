@@ -15,7 +15,7 @@ import Discovery from '@/components/discoveries/discovery';
 
 export default function Home() {
     useEffect(() => {
-        AOS.init({ duration: 3000, once: false});
+        AOS.init({ duration: 1000, once: true});
 
     }, []);
 
@@ -57,9 +57,7 @@ export default function Home() {
 
 
                 <section id="people" className="pt-[200px]">
-                    <section className="bg-white shadow-lg rounded-lg p-6 m-10">
                         <People/>
-                    </section>
                 </section>
 
                 <section  class="py-12 text-center">
@@ -91,9 +89,7 @@ export default function Home() {
 
 
                     <section id="discoveries"  className="pt-[200px]">
-                        <section id="discoveries" className="bg-white shadow-lg rounded-lg p-6 m-10">
                             <Discovery/>
-                        </section>
                 </section>
                     
 

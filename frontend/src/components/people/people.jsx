@@ -8,7 +8,9 @@ const stats = [
   export default function People() {
     return (
       // <div className="bg-white py-24 sm:py-32">
-      <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 rounded-lg">
+
+
+      <div className="relative isolate bg-white shadow-lg rounded-lg  overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 rounded-lg">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">

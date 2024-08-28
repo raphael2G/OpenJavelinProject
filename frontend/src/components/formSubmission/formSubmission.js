@@ -10,6 +10,8 @@ export default function FormSubmission() {
 
     return (
         <div className="submission-container">
+       <div className='py-8'></div>
+
             {/* reccomended to use width and height props through hook. don't think it is a big deal */}
             <Confetti/> 
 
@@ -27,18 +29,18 @@ export default function FormSubmission() {
                 <h2>Next Steps</h2>
                 <p>What happens next? Stay tuned for updates and further results.</p>
             </div>
-            <div className="share-feedback-section">
+            {/* <div className="share-feedback-section">
                 <h2>Share This Project</h2>
                 <button onClick={() => window.open('https://twitter.com/share?url=https://openjavelinproject.com', '_blank')}>Share on Twitter</button>
                 <button onClick={() => window.open('https://facebook.com/sharer/sharer.php?u=https://openjavelinproject.com', '_blank')}>Share on Facebook</button>
                 <h2>We Value Your Feedback</h2>
                 <p>Please take a moment to tell us about your experience.</p>
                 <button onClick={() => navigate('/feedback')}>Give Feedback</button>
-            </div>
+            </div> */}
             <div className="navigation-section">
                 <button onClick={() => navigate('/')}>Go to Home Page</button>
-                <button onClick={() => navigate('/form')}>Fill Out Another Form</button>
-                <button onClick={() => navigate('/explore')}>Explore More</button>
+                {/* <button onClick={() => navigate('/form')}>Fill Out Another Form</button> */}
+                <button onClick={() => navigate('/discoveries')}>404 Page</button>
             </div>
         </div>
     );

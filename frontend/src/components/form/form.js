@@ -270,8 +270,18 @@ const Form = ({uid}) => {
 
   return (
     <>
-      <h1 style={{textAlign: 'center', fontSize: '4em'}}>Open Javelin Project</h1>
-      <h1 style={{textAlign: 'center', fontSize: '2em'}}>A data driven approach towards understanding elite javelin performance.</h1>
+      {/* <h1 style={{textAlign: 'center', fontSize: '4em'}}>Open Javelin Project</h1>
+      <h1 style={{textAlign: 'center', fontSize: '2em'}}>A data driven approach towards understanding elite javelin performance.</h1> */}
+       <div className='py-16'></div>
+      <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        Open Javelin Project
+      </h1>
+      {/* <h2 className="text-center text-lg sm:text-xl md:text-2xl mb-6 text-gray-700">
+        A data-driven approach towards understanding elite javelin performance.
+      </h2> */}
+      <h2 className="text-center text-lg sm:text-xl md:text-2xl mb-6 text-gray-700 px-4">
+        Fill out this form to contribute to the project. It'll only take a few minutes. Don't worry if you don't have all the information. You can go back in and append your submission later.
+      </h2>
 
       <div className="form-container">
           <form onSubmit={handleSubmit}>
