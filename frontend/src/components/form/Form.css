@@ -1,55 +1,94 @@
 .form-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-section {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .field-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
+  width: 90%;
+  max-width: 2000px; /* Increased max-width for wider screens */
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  text-align: left;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 600px) {
   .input-row {
-    display: flex;
-    margin-bottom: 10px;
+    flex-direction: row;
     align-items: center;
   }
-  
+
   .input-label {
-    width: 200px; /* Adjust based on your longest label */
+    width: 150px;
     margin-right: 10px;
     text-align: right;
-    font-size: 16px;
   }
-  
+
   input {
     flex: 1;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
   }
-  
-  button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    width: 80%; /* Adjust width for larger screens */
   }
-  
-  button:hover {
-    background-color: #0056b3;
+
+  .input-label {
+    width: 200px;
   }
-  
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    width: 80%; /* Make form wider on larger screens */
+  }
+}
+
+@media (min-width: 1440px) {
+  .form-container {
+    width: 90%; /* Further increase width for very large screens */
+  }
+}
+
