@@ -1,7 +1,7 @@
 import { StarIcon } from '@heroicons/react/20/solid'
-
+  
 export default function Discovery() {
-  return (
+  return ( 
     <section className="bg-white shadow-lg rounded-lg py-6 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
       <figure className="mx-auto max-w-2xl">
